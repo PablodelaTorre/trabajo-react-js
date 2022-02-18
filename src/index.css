@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.listaNav{
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c7dcfc;
+}
+
+.listaNav h1{
+  margin-top: 16px;
+  margin-left: 1rem;
+}
+
+.listaNav ul{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.listaNav ul li{
+  margin-left: 1rem;
+}
+
+.listaNav ul li a{
+  text-decoration: none;
+
+}
