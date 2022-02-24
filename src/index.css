@@ -3,31 +3,21 @@ body {
   padding: 0;
 }
 
-.listaNav{
-  display: flex;
-  width: 100vw;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #c7dcfc;
+.bgNav{
+  background-color: #817df5;
 }
 
-.listaNav h1{
-  margin-top: 16px;
-  margin-left: 1rem;
+.itemListContainer {
+  background-color: azure;
+  height: 75vh;
 }
 
-.listaNav ul{
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin-right: 2rem;
+.paddingNone {
+  padding: 0;
 }
 
-.listaNav ul li{
-  margin-left: 1rem;
+.marginNone{
+  margin: 0;
 }
 
-.listaNav ul li a{
-  text-decoration: none;
 
-}
