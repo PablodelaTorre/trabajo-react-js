@@ -3,24 +3,17 @@ import React from 'react'
 const Item = ({item}) => {
     return (
         <>
-            <div className='container my-4 h-25'>
-                <div className='d-flex cl justify-content-center h-25'>
-                    <div className="card d-flex justify-content-center">
-                        <img src="" className="card-img-top" alt="..."/>
-                        <div className="card-body d-flex justify-content-center">
-                            <div className='row'>
-                                <h1 className="card-title">{item.title}</h1>
-                            </div>
-                            <div className='row'>
-                                <p className="card-text">{item.description}</p>
-                            </div>
-                            <div className='row'>
-                                <a href="#" className="btn btn-primary">{item.price}</a>
-                            </div>
-                        </div>
-                    </div>    
-                </div>                        
-            </div>
+            <div className="d-flex justify-content-center my-4">
+                <div className="d-flex flex-column border justify-content-center">
+                    
+                    <h1 className="fs-4">{item.title}</h1>
+                    <img src="" className="card-img-top d-flex justify-content-center" alt="..."/>
+                    <p className="fs-6">{item.description}</p>
+                    <p className="fs-6">{item.price} $</p>
+                    <a href="#" className="btn btn-primary">Ver detalles del producto</a>
+                    
+                </div>
+            </div>    
         </>
     )
 }
