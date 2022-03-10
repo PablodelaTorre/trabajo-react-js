@@ -24,3 +24,15 @@ body {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
+
+@media (max-width: 600px) {
+  .render-prod {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .render-prod {
+    grid-template-columns: auto auto;
+  }
+}
