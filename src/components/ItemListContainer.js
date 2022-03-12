@@ -2,27 +2,33 @@ import React, {useEffect, useState} from 'react'
 import ItemCount from './ItemCount'
 import products from '../database/products'
 import ItemList from './ItemList'
+import { toast } from 'react-toastify'
 
-
-    function getDatos(){
-        return new Promise((resolve,reject) => {
-            setTimeout(function(){
-                const error = false
-
-                if(error===false){
-                    resolve(products)
-                }
-                reject("Error obteniendo los datos")
-            },2000)
-        })
-    }    
 
 const ItemListContainer = ({greeting}) => {
     
+    const [loading, setLoading] = useState(true)
     const [items,setItems] = useState([])
+    
 
     useEffect(()=>{
-        getDatos().then(res => setItems(res)).catch(err => console.error(err))
+
+        toast.info("Cargando productos...")
+        const pedido = fetch('https://fakestoreapi.com/products')
+        
+        pedido.then((res)=>{
+            return res.json()
+        })
+        .then((resultado)=>{
+            toast.dismiss()
+            setItems(resultado)
+        })
+        .catch(()=>{
+            toast.error("Error al cargar los productos")
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
     },[])
 
     return (
