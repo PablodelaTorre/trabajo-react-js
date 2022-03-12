@@ -1,34 +1,42 @@
 import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import ItemDetail from './ItemDetail'
 
-
-
-function getDatos(){
-    return new Promise((resolve,reject) => {
-        setTimeout(function(){
-            const error = false
-
-            if(error===false){
-                resolve()
-            }
-            reject("Error obteniendo los datos")
-        },2000)
-    })
-}    
 
 
 
 const ItemDetailContainer = () => {
 
-    const [item,setItem] = useState({})
+    const [item, setItem] = useState({})
+    const [loading, setLoading] = useState(true)
+    const {itemId} = useParams()
 
     useEffect(()=>{
-        getDatos().then(res => setItem(res)).catch(err => console.error(err))
-    },[])
+        toast.info("cargando detalle")
+        fetch(`https://fakestoreapi.com/products/${itemId}`)
+        .then((response)=>{
+            return response.json()
+        })
+        .then((res)=>{
+            console.log(res)
+            toast.dismiss()
+            setItem(res)
+        })
+        .catch(()=>{
+            toast.error("Error al cargar el detalle")
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+    },[itemId])
 
     return (
-        <ItemDetail item={item}/>
+        <div className='d-flex justify-content-center my-4'>
+            <ItemDetail item={item}/>
+        </div>
     )
+
 }
 
 export default ItemDetailContainer

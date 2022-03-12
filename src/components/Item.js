@@ -9,9 +9,8 @@ const Item = ({item}) => {
                     
                     <h1 className="fs-5 mb-6 d-flex justify-content-center title-products">{item.title}</h1>
                     <img src={item.image} className="card-img-top d-flex justify-content-center imagen-products mt-5" alt="..."/>
-                    {/* <p className="fs-6 d-flex justify-content-center">{item.description}</p> */}
                     <p className="fs-5 text-success d-flex justify-content-center mt-6">{item.price} $</p>
-                    <Link to={`/producto/${item.id}`} className="btn btn-primary detalle-producto">Ver detalles del producto</Link>
+                    <Link to={`/item/${item.id}`} className="btn btn-primary detalle-producto">Ver detalles del producto</Link>
                     
                 </div>
             </div>    

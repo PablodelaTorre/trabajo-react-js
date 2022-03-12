@@ -80,3 +80,19 @@ body {
   left: 10%;
   right: 10%;
 }
+
+.contenedor-detalle{
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 75vh;
+  width: 85vw;
+}
+
+.contenedor-detalle > img{
+  width: 40%;
+  height: 74vh;
+}
+
