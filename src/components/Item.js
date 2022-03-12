@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Item = ({item}) => {
     return (
@@ -10,7 +11,7 @@ const Item = ({item}) => {
                     <img src={item.image} className="card-img-top d-flex justify-content-center" alt="..."/>
                     <p className="fs-6 d-flex justify-content-center">{item.description}</p>
                     <p className="fs-6 d-flex justify-content-center">{item.price} $</p>
-                    <a href="#" className="btn btn-primary">Ver detalles del producto</a>
+                    <Link to={`/producto/${item.id}`} className="btn btn-primary">Ver detalles del producto</Link>
                     
                 </div>
             </div>    

@@ -4,16 +4,22 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Carrito from './components/Carrito'
+
 
 const App = () => {
   
   return (
     <BrowserRouter>
         <NavBar/>
-        <ItemListContainer greeting="Bienvenidos a ECOMERCE!!"/>
-        <ItemDetailContainer/>
         <ToastContainer/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a ECOMERCE!!"/>}/>
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Productos:"/>}/>
+          <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
+          <Route path="/carrito" element={<Carrito/>}/>    
+        </Routes>
     </BrowserRouter>
   )
 }
