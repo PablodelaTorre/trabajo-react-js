@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail'
-import products from '../database/products'
+
 
 
 function getDatos(){
@@ -9,7 +9,7 @@ function getDatos(){
             const error = false
 
             if(error===false){
-                resolve(products)
+                resolve()
             }
             reject("Error obteniendo los datos")
         },2000)

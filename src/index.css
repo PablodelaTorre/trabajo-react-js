@@ -4,7 +4,16 @@ body {
 }
 
 .bgNav{
-  background-color: #817df5;
+  background-color: #bebcec;
+}
+
+.linkNav{
+  color: white;
+  transition: 0.2s;
+}
+
+.linkNav :hover{
+  color: rgb(189, 39, 39);
 }
 
 .itemListContainer {
