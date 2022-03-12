@@ -5,13 +5,13 @@ const Item = ({item}) => {
     return (
         <>
             <div className="row mx-2 my-4">
-                <div className="d-flex flex-column border justify-content-center">
+                <div className="border d-flex flex-column justify-content-center contenedor-products">
                     
-                    <h1 className="fs-4 my-1 d-flex justify-content-center">{item.title}</h1>
-                    <img src={item.image} className="card-img-top d-flex justify-content-center" alt="..."/>
-                    <p className="fs-6 d-flex justify-content-center">{item.description}</p>
-                    <p className="fs-6 d-flex justify-content-center">{item.price} $</p>
-                    <Link to={`/producto/${item.id}`} className="btn btn-primary">Ver detalles del producto</Link>
+                    <h1 className="fs-5 mb-6 d-flex justify-content-center title-products">{item.title}</h1>
+                    <img src={item.image} className="card-img-top d-flex justify-content-center imagen-products mt-5" alt="..."/>
+                    {/* <p className="fs-6 d-flex justify-content-center">{item.description}</p> */}
+                    <p className="fs-5 text-success d-flex justify-content-center mt-6">{item.price} $</p>
+                    <Link to={`/producto/${item.id}`} className="btn btn-primary detalle-producto">Ver detalles del producto</Link>
                     
                 </div>
             </div>    
