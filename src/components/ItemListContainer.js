@@ -20,11 +20,15 @@ const ItemListContainer = ({greeting}) => {
         const pedido = fetch('https://fakestoreapi.com/products')
         
         pedido.then((res)=>{
-            return res.json()
+            return res.json()        
         })
         .then((resultado)=>{
             toast.dismiss()
-            setItems(resultado)
+            if(categoryId===null){
+                setItems(resultado)
+            }else{
+                setItems(resultado.filter((val)=>{return val.category==categoryId}))
+            }
         })
         .catch(()=>{
             toast.error("Error al cargar los productos")
