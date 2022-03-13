@@ -24,11 +24,7 @@ const ItemListContainer = ({greeting}) => {
         })
         .then((resultado)=>{
             toast.dismiss()
-            if(categoryId===null){
-                setItems(resultado)
-            }else{
-                setItems(resultado.filter((val)=>{return val.category==categoryId}))
-            }
+            setItems(resultado)
         })
         .catch(()=>{
             toast.error("Error al cargar los productos")
