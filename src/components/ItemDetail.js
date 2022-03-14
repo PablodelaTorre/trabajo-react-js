@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-
+import Rate from 'rc-rate';
+import 'rc-rate/assets/index.css';
 
 const ItemDetail = ({item}) => {
     return (
@@ -9,6 +10,7 @@ const ItemDetail = ({item}) => {
             <h1 className=''>{item.title}</h1>
             <p className='fs-4 text-success precio-detalle'>{item.price} $</p>
             <p className="fs-6 d-flex justify-content-center descripcion-detalle">{item.description}</p> 
+            <div className='rate-detalle'><Rate count={5} value={item.rating.rate}/></div>
             <div className="contador-stock"><ItemCount stock={6} initial={1}/></div>
         </article>
     )

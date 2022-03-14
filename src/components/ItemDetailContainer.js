@@ -31,11 +31,15 @@ const ItemDetailContainer = () => {
         })
     },[itemId])
 
-    return (
-        <div className='d-flex justify-content-center my-4'>
-            <ItemDetail item={item}/>
-        </div>
-    )
+    if (loading){
+        return <h1>Cargando...</h1>
+    }else{
+        return (
+            <div className='d-flex justify-content-center my-4'>
+                <ItemDetail item={item}/>
+            </div>
+        )
+    }
 
 }
 
