@@ -18,6 +18,7 @@ const ItemListContainer = ({greeting}) => {
         toast.info("Cargando productos...")
 
         const pedido = fetch('https://fakestoreapi.com/products')
+        //`https://fakestoreapi.com/products${categoryId ? "/category/"+categoryId : ""}`
         
         pedido.then((res)=>{
             return res.json()        
