@@ -12,7 +12,7 @@ const NavBar = () => {
             <ul className='d-flex mx-4 align-items-center list-unstyled paddingNone marginNone'>
                 <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/men's clothing">Ropa</Link></li>
                 <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/jewelery">Joyería</Link></li>
-                <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/electronicos">Electrónicos</Link></li>
+                <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/electronics">Electrónicos</Link></li>
                 <li className='mx-3'><Link to="/carrito" className='text-decoration-none link-danger'><CarWidget/></Link></li>
             </ul>
         </nav>

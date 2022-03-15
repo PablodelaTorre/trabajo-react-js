@@ -16,9 +16,9 @@ const ItemListContainer = ({greeting}) => {
     useEffect(()=>{
 
         toast.info("Cargando productos...")
-
-        const pedido = fetch('https://fakestoreapi.com/products')
-        //`https://fakestoreapi.com/products${categoryId ? "/category/"+categoryId : ""}`
+        const url = `https://fakestoreapi.com/products/${categoryId ? "/category/"+categoryId : ""}`
+        
+        const pedido = fetch(url)
         
         pedido.then((res)=>{
             return res.json()        
