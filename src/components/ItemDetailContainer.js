@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import ItemDetail from './ItemDetail'
-
+import Spinner from './Spinner'
 
 
 
@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     },[itemId])
 
     if (loading){
-        return <h1>Cargando...</h1>
+        return <Spinner/>
     }else{
         return (
             <div className='d-flex justify-content-center my-4'>

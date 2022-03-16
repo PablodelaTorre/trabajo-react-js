@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList'
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router-dom'
+import Spinner from './Spinner'
 
 
 const ItemListContainer = ({greeting}) => {
@@ -35,7 +36,11 @@ const ItemListContainer = ({greeting}) => {
     },[categoryId])
 
     if (loading){
-        return <h1 className='text.success fs-2 fw-bold'>Cargando...</h1>
+        return (
+            <div className='d-flex justify-content-center align-content-center mt-5'>
+                <Spinner/>
+            </div>
+        )
     }else{
         return (
             <>
