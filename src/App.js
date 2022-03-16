@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Carrito from './components/Carrito'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
           <Route path="/carrito" element={<Carrito/>}/>    
         </Routes>
+        <Footer/>
     </BrowserRouter>
   )
 }
