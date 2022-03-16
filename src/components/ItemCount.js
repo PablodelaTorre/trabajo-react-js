@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
     
     let [estado, setEstado] = useState(initial)
 
@@ -21,9 +21,13 @@ const ItemCount = ({stock, initial}) => {
         }
     }
 
-    const onAdd = () => {
-        console.log("Desea comprar la cantidad de : " + estado + " productos")
+    const handleAgregar = () => {
+        onAdd(estado)
     }
+
+    // const onAdd = () => {
+    //     console.log("Desea comprar la cantidad de : " + estado + " productos")
+    // }
 
 
     return (
@@ -35,7 +39,7 @@ const ItemCount = ({stock, initial}) => {
             </div>
             <div className='container w-50'>
                 <div className='row'>
-                    <button type='button' className='btn btn-success fs-5' onClick={onAdd}>Agregar al Carrito</button>
+                    <button type='button' className='btn btn-success fs-5' onClick={handleAgregar}>Agregar al Carrito</button>
                 </div>
             </div>
         </>

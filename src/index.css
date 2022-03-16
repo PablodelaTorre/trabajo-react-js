@@ -84,12 +84,12 @@ body {
 .contenedor-detalle{
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto;
   border-radius: 3px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
-  height: 80vh;
+  height: 85vh;
   width: 95vw;
 }
 
@@ -102,7 +102,7 @@ body {
   grid-column: 1;
   width: 100%;
   height: 74vh;
-  grid-row: span 5;
+  grid-row: span 6;
 }
 
 .contenedor-detalle > h1{
@@ -123,16 +123,29 @@ body {
   text-align: center;
 }
 
-.contador-stock{
-  grid-column: 2;
-  grid-row: 5;
-}
-
 .rate-detalle{
   grid-column: 2;
   grid-row: 4;
   text-align: center;
 }
+
+.contador-stock{
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.ir-carrito-detalle{
+  grid-column: 2;
+  grid-row: 6;
+  text-align: center;
+}
+
+.boton-reiniciar-detalle{
+  grid-column: 2;
+  grid-row: 7;
+  text-align: center;
+}
+
 
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -152,6 +165,3 @@ body {
   }
 }
 
-.container-spinner {
-  height: 100%;
-}
