@@ -6,7 +6,8 @@
 
 ||
 
-# GIF con ejemplo de la navegación en el sitio.
+# GIF con ejemplo de la navegación en el sitio:
+![](public/multimedia/GIF-ecommmerce.gif)
 
 ||
 # Estructura del sitio web:
