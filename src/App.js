@@ -7,12 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Carrito from './components/Carrito'
 import Footer from './components/Footer'
+import MiProvider from "./context/CartContext"
 
 
 const App = () => {
   
   return (
     <BrowserRouter>
+      <MiProvider>
         <NavBar/>
         <ToastContainer/>
         <Routes>
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="/carrito" element={<Carrito/>}/>    
         </Routes>
         <Footer/>
+      </MiProvider>  
     </BrowserRouter>
   )
 }

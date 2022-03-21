@@ -2,15 +2,19 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { contexto } from '../context/CartContext';
 
 const ItemDetail = ({item}) => {
+    
+    const { addItem } = useContext(contexto)
 
     const [cantidad, setCantidad] = useState(0)
 
     const onAdd =(cantidad) => {
         setCantidad(cantidad)
+        addItem(item, cantidad)
     }
 
     return (

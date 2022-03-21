@@ -39,7 +39,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             </div>
             <div className='container w-50'>
                 <div className='row'>
-                    <button type='button' className='btn btn-success fs-5' onClick={handleAgregar}>Agregar al Carrito</button>
+                    <button type='button' className='btn btn-success fs-5' onClick={handleAgregar}>Confirmar cantidad seleccionada</button>
                 </div>
             </div>
         </>
