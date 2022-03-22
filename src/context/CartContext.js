@@ -52,6 +52,7 @@ const MiProvider = ({ children }) => {
     const valorDelContexto = {
         carrito: carrito,      
         addItem: addItem,
+        limpiarCarrito: limpiarCarrito,
         calcCantidad: calcCantidad,
         calcPrecioTotal: calcPrecioTotal
     }

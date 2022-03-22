@@ -30,3 +30,5 @@ const App = () => {
 }
 
 export default App
+
+//seguir viendo clase 10 desde 1 hora min 30
