@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { contexto } from '../context/CartContext'
 import CarWidget from './CarWidget'
 
 
 const NavBar = () => {
+    
+    const {calcCantidad} = useContext(contexto)
+    
     return (
     <>
         
@@ -13,7 +17,7 @@ const NavBar = () => {
                 <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/men's clothing">Ropa</Link></li>
                 <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/jewelery">Joyería</Link></li>
                 <li className='mx-3 linkNav'><Link className='text-decoration-none linkNav' to="/category/electronics">Electrónicos</Link></li>
-                <li className='mx-3'><Link to="/carrito" className='text-decoration-none link-danger'><CarWidget/></Link></li>
+                <li className='mx-3'><Link to="/carrito" className='text-decoration-none link-danger'><CarWidget/>{calcCantidad()}</Link></li>
             </ul>
         </nav>
     </>
