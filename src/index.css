@@ -173,8 +173,8 @@ body {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
-  height: 402h;
-  width: 50vw;
+  max-height: 50vh;
+  max-width: 32vw;
 }
 
 .contenedor-carrito:hover {
@@ -212,4 +212,10 @@ body {
 .eliminar-producto-carrito{
   grid-column: 2;
   grid-row: 5;
+}
+
+.render-carrito {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  max-width: 100%;
 }
