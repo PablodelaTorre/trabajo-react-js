@@ -9,8 +9,8 @@ const Carrito = () => {
 
     if (carrito == 0){
         return (
-            <div className='d-flex justify-content-center'>
-                <h2 className='fs2 fw-bold text-danger'>Carrito de compras vacío</h2>
+            <div className='d-flex justify-content-center my-5'>
+                <h2 className='fs1 fw-bold text-danger'>Carrito de compras vacío</h2>
             </div> 
         )
     }else{
