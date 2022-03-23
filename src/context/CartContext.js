@@ -8,13 +8,13 @@ const MiProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([]);   
 
-    const addItem = (producto,cantidad) => {     
+    const addItem = (item,quantity) => {     
         const copiaCarrito = [...carrito];
-        const itemAlCarrito = { ...producto, cantidad};        
+        const itemAlCarrito = { ...item, quantity};        
 
-        if(yaExisteEnCarrito(producto.id)) {            
-            let index = copiaCarrito.findIndex( item => item.id === producto.id)
-            copiaCarrito[index].cantidad += cantidad;
+        if(isInCart(item.id)) {            
+            let index = copiaCarrito.findIndex( prod => prod.id === item.id)
+            copiaCarrito[index].quantity += quantity;
             setCarrito(copiaCarrito)
         } 
         else{
@@ -23,36 +23,37 @@ const MiProvider = ({ children }) => {
         }        
     }
 
-    const yaExisteEnCarrito = (id) => {
-        carrito.some((item)=>{
-            return item.id===id
+    const isInCart = (id) => {
+        carrito.some((product)=>{
+            return product.id===id
         })
     }
 
-    const borrarProdDelCarrito = (id) => {
-        //filter
+    const removeItem = (id) => {
+        setCarrito(carrito.filter(product => product.id !== id))
     }
 
-    const limpiarCarrito = () => {
+    const clear = () => {
         setCarrito([])
     }
 
     const calcCantidad = () =>{
         let cantidad = 0;
-        carrito.forEach(item => cantidad += item.cantidad)
+        carrito.forEach(item => cantidad += item.quantity)
         return cantidad;
     }
 
     const calcPrecioTotal = () =>{
         let precioTotal = 0
-        carrito.forEach(item => precioTotal = item.cantidad * item.price )    
+        carrito.forEach(item => precioTotal = item.quantity * item.price )    
         return precioTotal;  
     }
 
     const valorDelContexto = {
-        carrito: carrito,      
-        addItem: addItem,
-        limpiarCarrito: limpiarCarrito,
+        carrito,      
+        addItem,
+        clear,
+        removeItem,
         calcCantidad: calcCantidad,
         calcPrecioTotal: calcPrecioTotal
     }
