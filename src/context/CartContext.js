@@ -24,8 +24,8 @@ const MiProvider = ({ children }) => {
     }
 
     const isInCart = (id) => {
-        carrito.some((product)=>{
-            return product.id===id
+        return carrito.some((product)=>{
+            return product.id === id
         })
     }
 
