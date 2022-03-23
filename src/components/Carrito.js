@@ -4,24 +4,44 @@ import { contexto } from '../context/CartContext'
 
 const Carrito = () => {
     
-    const {carrito, removeItem} = useContext(contexto)
+    const {carrito, removeItem, clear} = useContext(contexto)
     
-    return (
-        
-            <div className='render-carrito'>
-                {carrito.map(producto => (
-                    <div key={producto.id} className="contenedor-carrito my-4">
-                        <img src={producto.image} alt=""/>
-                        <p className='d-flex justify-content-center titulo-carrito fw-bold'>{producto.title}</p>
-                        <p className='d-flex justify-content-center precio-carrito fs-4 fw-bold'>{producto.price + "$"}</p>
-                        <p className='d-flex justify-content-center cantidad-carrito fs-4 text-info'>Cantidad: {producto.quantity}</p>
-                        <p className='d-flex justify-content-center text-success fs-3 total-parcial-carrito'>Total parcial: {producto.quantity * producto.price + "$"}</p>
-                        <button onClick={() => removeItem(producto.id)} className='btn, btn-danger eliminar-producto-carrito'>Eliminar Producto</button>
-                    </div>
-                ))}
-            </div>
-            
-    )
+
+    if (carrito == 0){
+        return (
+            <div className='d-flex justify-content-center'>
+                <h2 className='fs2 fw-bold text-danger'>Carrito de compras vacío</h2>
+            </div> 
+        )
+    }else{
+        return (
+            <>
+                <div className='render-carrito'>
+                    {carrito.map(producto => (
+                        <div key={producto.id} className="contenedor-carrito my-4">
+                            <img src={producto.image} alt=""/>
+                            <p className='d-flex justify-content-center titulo-carrito fw-bold'>{producto.title}</p>
+                            <p className='d-flex justify-content-center precio-carrito fs-4 fw-bold'>{producto.price + "$"}</p>
+                            <p className='d-flex justify-content-center cantidad-carrito fs-4 text-info'>Cantidad: {producto.quantity}</p>
+                            <p className='d-flex justify-content-center text-success fs-3 total-parcial-carrito'>Total parcial: {producto.quantity * producto.price + "$"}</p>
+                            <button onClick={() => removeItem(producto.id)} className='btn, btn-danger eliminar-producto-carrito'>Eliminar Producto</button>
+                        </div>
+                    ))}
+                </div>
+                <div className='d-flex justify-content-center my-3'>
+                    <button className='btn btn-warning' onClick={() => clear()}>
+                            Borrar todos los productos
+                    </button>
+                </div>
+                <div className='d-flex justify-content-center my-3'>
+                    <button className='btn btn-success'>
+                            Terminar compra
+                    </button>
+                </div>
+            </>
+        )
+    }
+    
 }      
 
 export default Carrito
