@@ -45,7 +45,7 @@ const MiProvider = ({ children }) => {
 
     const calcPrecioTotal = () =>{
         let precioTotal = 0
-        carrito.forEach(item => precioTotal = item.quantity * item.price )    
+        carrito.forEach(item => precioTotal = precioTotal + item.quantity * item.price )    
         return precioTotal;  
     }
 

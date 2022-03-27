@@ -166,6 +166,7 @@ body {
 }
 
 .contenedor-carrito{
+  background-color: white;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto auto auto;
@@ -215,7 +216,43 @@ body {
 }
 
 .render-carrito {
+  background: radial-gradient(#c7fbff, #f4faea);
   display: grid;
   grid-template-columns: auto auto auto;
   max-width: 100%;
 }
+
+.carrito-vacio {
+  background: radial-gradient(#dacece, #9094bd);
+}
+
+.borrar-productos {
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  height: 6vh;
+  width: 15vw;
+  background-color: rgb(255, 60, 0);
+  border: none;
+  color: white;
+  transition: 0.4s;
+}
+
+.borrar-productos:hover {
+  transform: scale(1.1);
+}
+
+.terminar-compra {
+  font-size: 1.8rem;
+  border-radius: 0.4rem;
+  height: 8vh;
+  width: 30vw;
+  background-color: rgb(66, 241, 50);
+  border: none;
+  color: white;
+  transition: 0.4s;
+}
+
+.terminar-compra:hover{
+  transform: scale(1.1);
+}
+

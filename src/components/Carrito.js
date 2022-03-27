@@ -1,16 +1,18 @@
 import React, {useContext} from 'react'
 import { contexto } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 const Carrito = () => {
     
-    const {carrito, removeItem, clear} = useContext(contexto)
+    const {carrito, removeItem, clear, calcCantidad, calcPrecioTotal} = useContext(contexto)
     
 
     if (carrito == 0){
         return (
-            <div className='d-flex justify-content-center my-5'>
-                <h2 className='fs1 fw-bold text-danger'>Carrito de compras vacío</h2>
+            <div className='d-flex flex-column justify-content-center align-items-center my-5 carrito-vacio'>
+                <h2 className='fs1 fw-bold text-light'>Carrito de compras vacío.</h2>
+                <Link to="/" className='text-decoration-none btn btn-success fs-3 my-5'>Ver más prductos</Link>
             </div> 
         )
     }else{
@@ -29,12 +31,22 @@ const Carrito = () => {
                     ))}
                 </div>
                 <div className='d-flex justify-content-center my-3'>
-                    <button className='btn btn-warning' onClick={() => clear()}>
-                            Borrar todos los productos
+                    <p className='fs-3 fw-bold text-ligth'>
+                        {"Cantidad total de productos: " + calcCantidad()}
+                    </p>
+                </div>
+                <div className='d-flex justify-content-center my-3'>
+                    <p className='fs-3 fw-bold text-dark'>
+                        {"Precio total a pagar: $" + calcPrecioTotal()}
+                    </p>
+                </div>
+                <div className='d-flex justify-content-center my-3'>
+                    <button className='borrar-productos' onClick={() => clear()}>
+                            Borrar productos
                     </button>
                 </div>
                 <div className='d-flex justify-content-center my-3'>
-                    <button className='btn btn-success'>
+                    <button className='terminar-compra'>
                             Terminar compra
                     </button>
                 </div>
