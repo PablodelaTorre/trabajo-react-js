@@ -1,10 +1,8 @@
 import React from 'react'
-import { useContext } from 'react/cjs/react.production.min'
-import { contexto } from '../context/CartContext'
 
 const CarWidget = () => {
 
-    //const {calcCantidad} = useContext(contexto)
+    
 
     return (
         
